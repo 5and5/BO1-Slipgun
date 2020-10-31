@@ -15,6 +15,13 @@ rawfile,maps/zombie_coast.gsc
 rawfile,maps/zombie_temple.gsc
 rawfile,maps/zombie_moon.gsc
 
+//WEAPON SCRIPTS
+rawfile,maps/_zombiemode_weap_tesla.gsc
+rawfile,maps/_zombiemode_weap_shrink_ray.gsc
+
+//CLIENT SCRIPTS
+rawfile,clientscripts/_zombiemode_weap_tesla.csc
+
 //WEAPONS
 weapon,sp/tesla_gun_zm
 weapon,sp/tesla_gun_upgraded_zm

@@ -2,15 +2,15 @@
  slipgun + waffe = this mod
 
 TODO:
-* Add pure fx
-* make custom tube
-* add camos
-* fix shang
 
 ## Change Notes
 
-### Wonderwaffe
-* Add chaining mechanic similar to the Sliquifier from Die Rise
+### Box 
+* Added Sliquifer DG-2 to every map
+* Added weight functions for Sliquifer DG-2, Raygun and Monkeys/Gershes on every map
+
+### Sliquifer DG-2
+* Added chaining mechanic similar to the Sliquifier from Die Rise
 * Replaced sprint anims with Call of the Deads waffe anims
 * Replaced electric effects with purple electric
 * Increased move speed from 80% to 100%

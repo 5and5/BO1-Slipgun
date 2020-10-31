@@ -306,6 +306,7 @@ include_weapons()
 	include_weapon( "sticky_grenade_zm", false, true );
 	include_weapon( "spikemore_zm", false, true );
 
+	
 	//	Weapons - Pistols
 	include_weapon( "m1911_zm", false );						// colt
 	include_weapon( "m1911_upgraded_zm", false );
@@ -384,7 +385,7 @@ include_weapons()
 	include_weapon( "zombie_cymbal_monkey", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );
 	include_weapon( "ray_gun_zm", true, false, maps\_zombiemode_weapons::default_ray_gun_weighting_func );
 	include_weapon( "ray_gun_upgraded_zm", false );
-	//include_weapon( "shrink_ray_zm" );
+	include_weapon( "shrink_ray_zm", false );
 	include_weapon( "shrink_ray_upgraded_zm", false );
 	
 	include_weapon( "crossbow_explosive_zm" );
