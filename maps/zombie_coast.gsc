@@ -475,31 +475,33 @@ include_weapons()
 	include_weapon( "china_lake_upgraded_zm", false );
 
 	//	Weapons - Special
-	include_weapon( "ray_gun_zm" );
+	include_weapon( "ray_gun_zm", true, false, maps\_zombiemode_weapons::default_ray_gun_weighting_func );
 	include_weapon( "ray_gun_upgraded_zm", false );
 	include_weapon( "crossbow_explosive_zm" );
 	include_weapon( "crossbow_explosive_upgraded_zm", false );
 
 	// these are not available yet until their functionality is more complete
-	include_weapon( "humangun_zm", true, false );
-	include_weapon( "humangun_upgraded_zm", false );
-	include_weapon( "sniper_explosive_zm", true );
-	include_weapon( "sniper_explosive_upgraded_zm", false );
+	//include_weapon( "humangun_zm", true, false );
+	//include_weapon( "humangun_upgraded_zm", false );
+	//include_weapon( "sniper_explosive_zm", true );
+	//include_weapon( "sniper_explosive_upgraded_zm", false );
 //	include_weapon( "tesla_gun_zm" );
 //	include_weapon( "tesla_gun_upgraded_zm", false );
-	include_weapon( "zombie_nesting_dolls", true, false );
+	include_weapon( "zombie_nesting_dolls", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );
 
 	include_weapon( "knife_ballistic_zm", true );
 	include_weapon( "knife_ballistic_upgraded_zm", false );
 	include_weapon( "knife_ballistic_sickle_zm", false );
 	include_weapon( "knife_ballistic_sickle_upgraded_zm", false );
+
+	include_weapon( "tesla_gun_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );
 	level._uses_retrievable_ballisitic_knives = true;
 
 
 	// limited weapons
 	maps\_zombiemode_weapons::add_limited_weapon( "m1911_zm", 0 );
 //	maps\_zombiemode_weapons::add_limited_weapon( "tesla_gun_zm", 1 );
-	maps\_zombiemode_weapons::add_limited_weapon( "humangun_zm", 1 );
+	maps\_zombiemode_weapons::add_limited_weapon( "tesla_gun_zm", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "sniper_explosive_zm", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "crossbow_explosive_zm", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "knife_ballistic_zm", 1 );

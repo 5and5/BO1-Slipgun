@@ -75,6 +75,81 @@ add_zombie_weapon( weapon_name, upgrade_name, hint, cost, weaponVO, weaponVOresp
 	level.zombie_weapons[weapon_name] = struct;
 }
 
+default_wonder_weapon_weighting_func()
+{
+	num_to_add = 1;
+
+	if( isDefined( level.pulls_since_last_tesla_gun ) )
+	{
+		// after 15 pulls the percentage increases to 30%
+		if( level.pulls_since_last_tesla_gun > 15 )
+		{
+			num_to_add += 0.3;
+		}
+		// after 10 pulls the percentage increases to 20%
+		else if( level.pulls_since_last_tesla_gun > 10 )
+		{
+			num_to_add += 0.2;
+		}
+		// after 5 pulls the percentage increases to 10%
+		else if( level.pulls_since_last_tesla_gun > 5 )
+		{
+			num_to_add += 0.1;
+		}
+	}
+
+	return num_to_add;
+}
+
+default_ray_gun_weighting_func()
+{
+	num_to_add = 1;
+
+	if( level.round_number < 25 )
+	{
+		 //increase the percentage of ray gun
+		if( isDefined( level.pulls_since_last_ray_gun ) )
+		{
+			// after 10 pulls the ray gun percentage increases to 30%
+			if( level.pulls_since_last_ray_gun > 10 )
+			{
+				num_to_add += 0.3;
+			}
+			// after 5 pulls the Ray Gun percentage increases to 15%
+			else if( level.pulls_since_last_ray_gun > 5 )
+			{
+				num_to_add += 0.15;
+			}
+		}
+	}
+	return num_to_add;
+}
+
+//	Greatly elevate the chance 
+default_monkey_weighting_func()
+{
+		if( level.round_number > 25 )
+		{
+			return 5;
+		}
+		else if( level.round_number > 20 )
+		{
+			return 4;
+		}
+		else if( level.round_number > 15 )
+		{
+			return 3;
+		}
+		else if( level.round_number > 10)
+		{
+			return 2;
+		}
+		else
+		{
+			return 1;
+		}
+}
+
 default_weighting_func()
 {
 	return 1;

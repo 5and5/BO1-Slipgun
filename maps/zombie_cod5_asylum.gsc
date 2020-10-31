@@ -470,7 +470,7 @@ include_weapons()
 	include_weapon("m72_law_zm");
 	include_weapon("china_lake_zm");
 	include_weapon("zombie_cymbal_monkey");
-	include_weapon( "ray_gun_zm" );
+	include_weapon( "ray_gun_zm", true, false, maps\_zombiemode_weapons::default_ray_gun_weighting_func );
 	include_weapon("crossbow_explosive_zm");
 	include_weapon("knife_ballistic_zm");
 
@@ -487,19 +487,21 @@ include_weapons()
 	include_weapon( "zombie_doublebarrel", false, true );
 	include_weapon( "zombie_doublebarrel_sawed", false, true );
 
-	include_weapon( "zombie_cymbal_monkey");
-
+	include_weapon( "zombie_cymbal_monkey", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );
 
 	// Special
-	include_weapon( "freezegun_zm" );
+	//include_weapon( "freezegun_zm" );
 	include_weapon( "m1911_upgraded_zm", false );
 
 	//bouncing betties
 	include_weapon("mine_bouncing_betty", false, true);
 
+	include_weapon( "tesla_gun_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );
+	include_weapon( "tesla_gun_upgraded_zm", false );
+
 	// limited weapons
 	maps\_zombiemode_weapons::add_limited_weapon( "m1911_zm", 0 );
-	maps\_zombiemode_weapons::add_limited_weapon( "freezegun_zm", 1 );
+	maps\_zombiemode_weapons::add_limited_weapon( "tesla_gun_zm", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "crossbow_explosive_zm", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "knife_ballistic_zm", 1 );
 

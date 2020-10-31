@@ -271,7 +271,7 @@ include_weapons()
 	include_weapon("m72_law_zm");
 	include_weapon("china_lake_zm");
 	include_weapon("zombie_cymbal_monkey");
-	include_weapon("ray_gun_zm");
+	include_weapon( "ray_gun_zm", true, false, maps\_zombiemode_weapons::default_ray_gun_weighting_func );
 	include_weapon("crossbow_explosive_zm");
 	include_weapon("knife_ballistic_zm");
 
@@ -297,13 +297,13 @@ include_weapons()
 	include_weapon( "zombie_bar", false, true );
 	
 	// Special
-	include_weapon( "tesla_gun_zm" );
+	include_weapon( "tesla_gun_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );
 	include_weapon( "m1911_upgraded_zm", false );
 
 	//bouncing betties
 	include_weapon("mine_bouncing_betty", false, true );
 
-	include_weapon( "zombie_cymbal_monkey");
+	include_weapon( "zombie_cymbal_monkey", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );
 
 	level._uses_retrievable_ballisitic_knives = true;
 

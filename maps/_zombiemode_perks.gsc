@@ -381,7 +381,7 @@ vending_machine_trigger_think()
 			else
 			{
 				self SetInvisibleToPlayer( players[i], false );
-			}		
+			}
 		}
 		wait(0.1);
 	}
@@ -429,6 +429,15 @@ vending_weapon_upgrade()
 		if ( "microwavegun_zm" == current_weapon )
 		{
 			current_weapon = "microwavegundw_zm";
+		}
+
+		// cant pap waffe
+		if ( current_weapon == "tesla_gun_zm" )
+		{
+			self SetHintString( "Weapon can not be upgraded" );
+			wait( 2 );
+			self SetHintString( &"ZOMBIE_PERK_PACKAPUNCH", 5000 );
+			continue;
 		}
 
 		if( !player maps\_zombiemode_weapons::can_buy_weapon() ||

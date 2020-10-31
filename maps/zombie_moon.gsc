@@ -1132,17 +1132,19 @@ include_weapons()
 	level._uses_retrievable_ballisitic_knives = true;
 
 	//	Weapons - Special
-	include_weapon( "zombie_black_hole_bomb" );
-	include_weapon( "ray_gun_zm" );
+	include_weapon( "zombie_black_hole_bomb", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );
+	include_weapon( "ray_gun_zm", true, false, maps\_zombiemode_weapons::default_ray_gun_weighting_func );
 	include_weapon( "ray_gun_upgraded_zm", false );
 	include_weapon( "zombie_quantum_bomb" );
-	include_weapon( "microwavegundw_zm" );
+	//include_weapon( "microwavegundw_zm" );
 	include_weapon( "microwavegundw_upgraded_zm", false );
+
+	include_weapon( "tesla_gun_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );
 
 	// limited weapons
 	maps\_zombiemode_weapons::add_limited_weapon( "m1911_zm", 0 );
 	maps\_zombiemode_weapons::add_limited_weapon( "knife_ballistic_zm", 1 );
-	maps\_zombiemode_weapons::add_limited_weapon( "microwavegundw_zm", 1 );
+	maps\_zombiemode_weapons::add_limited_weapon( "tesla_gun_zm", 1 );
 	
 	// get the bowie into the collector achievement list
 	level.collector_achievement_weapons = array_add( level.collector_achievement_weapons, "bowie_knife_zm" );

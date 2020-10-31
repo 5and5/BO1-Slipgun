@@ -9,6 +9,9 @@
 
 main()
 {
+	level.pulls_since_last_ray_gun = 0;
+	level.pulls_since_last_tesla_gun = 0;
+
 	level.player_too_many_weapons_monitor = true;
 	level.player_too_many_weapons_monitor_func = ::player_too_many_weapons_monitor;
 	level._dontInitNotifyMessage = 1;
@@ -3900,7 +3903,15 @@ chalk_round_over()
 }
 
 round_think()
-{
+{	
+	// // strat tester
+    // level.round_number = 50; //69
+    // level.zombie_vars["zombie_spawn_delay"] = .08;
+    // level.zombie_move_speed = 105;
+    // level.first_round = false;
+    // players = get_players();
+	// players[0].score = 5555555;
+
 	for( ;; )
 	{
 		//////////////////////////////////////////
@@ -4866,7 +4877,10 @@ wait_and_revive()
 //		MUST return the value of the damage override
 //
 actor_damage_override( inflictor, attacker, damage, flags, meansofdeath, weapon, vpoint, vdir, sHitLoc, modelIndex, psOffsetTime )
-{
+{	
+	//iPrintLn(weapon);
+	//iPrintLn(modelIndex);
+
 	// WW (8/14/10) - define the owner of the monkey shot
 	if( weapon == "crossbow_explosive_upgraded_zm" && meansofdeath == "MOD_IMPACT" ) 
 	{
@@ -6570,5 +6584,4 @@ set_sidequest_completed(id)
 		}
 	}
 }
-
 

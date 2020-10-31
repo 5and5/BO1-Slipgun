@@ -181,7 +181,7 @@ main()
 	
 	//DCS: get betties working.
 	maps\_zombiemode_betty::init();	
-	
+
 }
 
 precache_player_model_override()
@@ -599,7 +599,7 @@ include_weapons()
 	// Special
 	include_weapon( "ray_gun_zm", true, false, ::factory_ray_gun_weighting_func );
 	include_weapon( "ray_gun_upgraded_zm", false );
-	include_weapon( "tesla_gun_zm", true );
+	include_weapon( "tesla_gun_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );
 	include_weapon( "tesla_gun_upgraded_zm", false );
 	include_weapon( "zombie_cymbal_monkey", true, false, ::factory_cymbal_monkey_weighting_func );
 
@@ -608,6 +608,7 @@ include_weapons()
 
 	// limited weapons
 	maps\_zombiemode_weapons::add_limited_weapon( "m1911_zm", 0 );
+	maps\_zombiemode_weapons::add_limited_weapon( "slipgun", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "tesla_gun_zm", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "crossbow_explosive_zm", 1 );
 	maps\_zombiemode_weapons::add_limited_weapon( "knife_ballistic_zm", 1 );
@@ -1955,4 +1956,4 @@ factory_german_safe()
 		dead_guy = GetEnt("hanging_dead_guy","targetname");
 		dead_guy Hide();
 	}	
-}	
+}
