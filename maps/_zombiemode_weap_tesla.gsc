@@ -43,16 +43,17 @@ init()
 	//slipgun vars
 	set_zombie_var( "slipgun_chain_wait_min", 0.75, 1 );
 	set_zombie_var( "slipgun_chain_wait_max", 1.5, 1 );
-	set_zombie_var( "slipgun_chain_radius", 150 );
+	set_zombie_var( "slipgun_chain_radius", 130 );
 
 	maps\_zombiemode_spawner::register_zombie_death_animscript_callback( ::slipgun_zombie_death_response );
 
 	level thread on_player_connect();
 }
 
+
 slipgun_zombie_death_response()
 {	
-	if ( !self is_slipgun_damage( self.mod, self.damageweapon ))
+	if ( !self.marked )
 	{	
 		return 0;
 	}
@@ -60,17 +61,6 @@ slipgun_zombie_death_response()
 	self thread explode_to_near_zombies( self.attacker );
 	self slipgun_do_damage( self.attacker );
 	return 1;
-}
-
-is_slipgun_damage( mod, weapon )
-{
-	if ( isDefined( weapon ) )
-	{
-		if ( weapon != "tesla_gun_zm" || weapon != "tesla_gun_upgraded_zm")
-		{
-			return (weapon == "tesla_gun_zm" || weapon == "tesla_gun_upgraded_zm");
-		}
-	}
 }
 
 slipgun_do_damage( player, upgraded )
@@ -111,7 +101,6 @@ slipgun_do_damage( player, upgraded )
 	}
 
 	self.slip_death = true;
-	//self.tesla_death = true;
 	self.no_powerups = true;
 	self slipgun_play_death_fx();
 
@@ -144,13 +133,8 @@ explode_to_near_zombies( player )
 		{
 			if( isalive( enemy ) && !isDefined( enemy.marked ) )
 			{	
-				//PlayFx(level._effect[ "slipgun_chained" ], self getTagOrigin("J_MainRoot"));
-				//enemy = playfxontag( level._effect[ "slipgun_chained" ], enemy, "J_Head" );
-				//enemy thread zombie_set_electric_buff();
-				//enemy tesla_play_arc_fx( self );
 				if( enemy != self )
 				{
-					//enemy slipgun_play_arc_fx( self );
 					self slipgun_play_arc_fx( enemy );
 				}
 				enemy.marked = true;
@@ -167,7 +151,6 @@ explode_to_near_zombies( player )
 			wait randomfloatrange( minchainwait, maxchainwait );
 			if ( isalive( enemy ) )
 			{	
-				enemy.marked = false;
 				enemy slipgun_do_damage( player );
 			}
 		}
@@ -524,6 +507,7 @@ tesla_do_damage( source_enemy, arc_num, player, upgraded )
 	player.tesla_network_death_choke++;
 
 	self.tesla_death = true;
+	self.marked = true;
 	self tesla_play_death_fx( arc_num );
 
 	// use the origin of the arc orginator so it pics the correct death direction anim

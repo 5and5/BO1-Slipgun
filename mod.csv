@@ -48,6 +48,9 @@ fx,maps/muzzleflashes/fx_tesla_view
 fx,maps/muzzleflashes/fx_tesla_world
 
 //XANIM
+xanim,viewmodel_tesla_ADS_down
+xanim,viewmodel_tesla_ADS_fire
+xanim,viewmodel_tesla_ADS_up
 xanim,viewmodel_tesla_d2p_in
 xanim,viewmodel_tesla_d2p_loop
 xanim,viewmodel_tesla_d2p_out
