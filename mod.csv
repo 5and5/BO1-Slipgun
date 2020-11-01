@@ -25,6 +25,7 @@ rawfile,clientscripts/_zombiemode_weap_tesla.csc
 //WEAPONS
 weapon,sp/tesla_gun_zm
 weapon,sp/tesla_gun_upgraded_zm
+weapon,sp/tesla_gun_dlc_zm
 
 //XMODLES
 xmodel,weapon_usa_tesla

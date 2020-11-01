@@ -1,13 +1,23 @@
-# BO1-DG2_Liquifier
- slipgun + waffe = this mod
+# Call of Duty: Black Ops Zombies - Slipgun Mod
 
-TODO:
+## Download
+
+[Download Mod](https://github.com/5and5/BO1-Slipgun_Mod/releases)
+[Download Patch](https://www.mediafire.com/file/6urqpa9s2d8nvwy/bo1-slipgun_mod.zip/file) Only works on Der Riese and Shi No Numa
+
+## Created by: 5and5
+
+[YouTube](https://www.youtube.com/user/Zomb0s4life)
+
+[Twitch](https://twitch.tv/5and5)
+
+[Twitter](https://twitter.com/5and55)
 
 ## Change Notes
 
-### Box 
+### General 
 * Added Sliquifer DG-2 to every map
-* Added weight functions for Sliquifer DG-2, Raygun and Monkeys/Gershes on every map
+* Added box weight functions to Sliquifer DG-2, Raygun and Monkeys/Gershes on every map
 
 ### Sliquifer DG-2
 * Added chaining mechanic similar to the Sliquifier from Die Rise

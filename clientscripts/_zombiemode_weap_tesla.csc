@@ -186,7 +186,7 @@ tesla_happy( localclientnum )
 	{
 		level waittill ("TGH");
 		currentweapon = GetCurrentWeapon( localclientnum );
-		if ( currentweapon == "tesla_gun_zm" || currentweapon == "tesla_gun_upgraded_zm" )
+		if ( currentweapon == "tesla_gun_zm" || currentweapon == "tesla_gun_upgraded_zm" || currentweapon == "tesla_gun_dlc_zm" )
 		{
 			playsound(localclientnum,"wpn_tesla_happy", (0,0,0));
 			level.tesla_play_rail = false;

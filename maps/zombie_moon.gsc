@@ -1139,12 +1139,12 @@ include_weapons()
 	//include_weapon( "microwavegundw_zm" );
 	include_weapon( "microwavegundw_upgraded_zm", false );
 
-	include_weapon( "tesla_gun_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );
+	include_weapon( "tesla_gun_dlc_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );
 
 	// limited weapons
 	maps\_zombiemode_weapons::add_limited_weapon( "m1911_zm", 0 );
 	maps\_zombiemode_weapons::add_limited_weapon( "knife_ballistic_zm", 1 );
-	maps\_zombiemode_weapons::add_limited_weapon( "tesla_gun_zm", 1 );
+	maps\_zombiemode_weapons::add_limited_weapon( "tesla_gun_dlc_zm", 1 );
 	
 	// get the bowie into the collector achievement list
 	level.collector_achievement_weapons = array_add( level.collector_achievement_weapons, "bowie_knife_zm" );

@@ -366,6 +366,8 @@ init_weapons()
  	add_zombie_weapon( "zombie_black_hole_bomb",		undefined,								&"ZOMBIE_WEAPON_SATCHEL_2000", 			2000,	"gersh",			"",		undefined );
  	add_zombie_weapon( "zombie_nesting_dolls",		undefined,								&"ZOMBIE_WEAPON_NESTING_DOLLS", 		2000,	"dolls",	"",		undefined );
 
+	 add_zombie_weapon( "tesla_gun_dlc_zm",				"tesla_gun_upgraded_zm",				&"ZOMBIE_WEAPON_TESLA", 				10,		"tesla",			"",		undefined );
+
 	if(IsDefined(level._zombie_custom_add_weapons))
 	{
 		[[level._zombie_custom_add_weapons]]();
