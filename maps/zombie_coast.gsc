@@ -481,10 +481,10 @@ include_weapons()
 	include_weapon( "crossbow_explosive_upgraded_zm", false );
 
 	// these are not available yet until their functionality is more complete
-	//include_weapon( "humangun_zm", true, false );
-	//include_weapon( "humangun_upgraded_zm", false );
-	//include_weapon( "sniper_explosive_zm", true );
-	//include_weapon( "sniper_explosive_upgraded_zm", false );
+	include_weapon( "humangun_zm", false, false );
+	include_weapon( "humangun_upgraded_zm", false );
+	include_weapon( "sniper_explosive_zm", false );
+	include_weapon( "sniper_explosive_upgraded_zm", false );
 //	include_weapon( "tesla_gun_zm" );
 //	include_weapon( "tesla_gun_upgraded_zm", false );
 	include_weapon( "zombie_nesting_dolls", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );

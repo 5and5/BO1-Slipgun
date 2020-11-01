@@ -560,8 +560,7 @@ include_weapons()
 
 	include_weapon( "zombie_cymbal_monkey", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );
 
-	include_weapon( "ray_gun_zm" );
-	//include_weapon( "thundergun_zm" );
+	include_weapon( "thundergun_zm", false );
 	include_weapon( "m1911_upgraded_zm", false );
 
 	include_weapon( "tesla_gun_zm", true, false, maps\_zombiemode_weapons::default_wonder_weapon_weighting_func );

@@ -155,35 +155,35 @@ default_weighting_func()
 	return 1;
 }
 
-default_tesla_weighting_func()
-{
-	num_to_add = 1;
-	if( isDefined( level.pulls_since_last_tesla_gun ) )
-	{
-		// player has dropped the tesla for another weapon, so we set all future polls to 20%
-		if( isDefined(level.player_drops_tesla_gun) && level.player_drops_tesla_gun == true )
-		{						
-			num_to_add += int(.2 * level.zombie_include_weapons.size);		
-		}
+// default_tesla_weighting_func()
+// {
+// 	num_to_add = 1;
+// 	if( isDefined( level.pulls_since_last_tesla_gun ) )
+// 	{
+// 		// player has dropped the tesla for another weapon, so we set all future polls to 20%
+// 		if( isDefined(level.player_drops_tesla_gun) && level.player_drops_tesla_gun == true )
+// 		{						
+// 			num_to_add += int(.2 * level.zombie_include_weapons.size);		
+// 		}
 		
-		// player has not seen tesla gun in late rounds
-		if( !isDefined(level.player_seen_tesla_gun) || level.player_seen_tesla_gun == false )
-		{
-			// after round 10 the Tesla gun percentage increases to 20%
-			if( level.round_number > 10 )
-			{
-				num_to_add += int(.2 * level.zombie_include_weapons.size);
-			}		
-			// after round 5 the Tesla gun percentage increases to 15%
-			else if( level.round_number > 5 )
-			{
-				// calculate the number of times we have to add it to the array to get the desired percent
-				num_to_add += int(.15 * level.zombie_include_weapons.size);
-			}						
-		}
-	}
-	return num_to_add;
-}
+// 		// player has not seen tesla gun in late rounds
+// 		if( !isDefined(level.player_seen_tesla_gun) || level.player_seen_tesla_gun == false )
+// 		{
+// 			// after round 10 the Tesla gun percentage increases to 20%
+// 			if( level.round_number > 10 )
+// 			{
+// 				num_to_add += int(.2 * level.zombie_include_weapons.size);
+// 			}		
+// 			// after round 5 the Tesla gun percentage increases to 15%
+// 			else if( level.round_number > 5 )
+// 			{
+// 				// calculate the number of times we have to add it to the array to get the desired percent
+// 				num_to_add += int(.15 * level.zombie_include_weapons.size);
+// 			}						
+// 		}
+// 	}
+// 	return num_to_add;
+// }
 
 
 //
@@ -929,8 +929,62 @@ init_starting_chest_location()
 	level.chest_index = 0;
 	start_chest_found = false;
 	for( i = 0; i < level.chests.size; i++ )
-	{
-		if( isdefined( level.random_pandora_box_start ) && level.random_pandora_box_start == true )
+	{	
+		if(level.script == "zombie_pentagon")
+        {
+            if(level.chests[i].script_noteworthy == "start_chest")
+            //if(IsSubStr(level.chests[i].script_noteworthy,  "start_chest" ))
+            {
+                level.chest_index = i;
+                level.chests[level.chest_index] hide_rubble();
+                level.chests[level.chest_index].hidden = false;
+            }
+            else
+            {
+                level.chests[i] hide_chest();
+            }
+        }
+		else if(level.script == "zombie_theater")
+        {
+            if(IsSubStr(level.chests[i].script_noteworthy,  "dining_chest" ))
+            {
+                level.chest_index = i;
+                level.chests[level.chest_index] hide_rubble();
+                level.chests[level.chest_index].hidden = false;
+            }
+            else
+                {
+                level.chests[i] hide_chest();
+                }
+        }
+        else if(level.script == "zombie_coast")
+        {
+            if(IsSubStr(level.chests[i].script_noteworthy, "start_chest" ))
+                {
+                    level.chest_index = i;
+                    level.chests[level.chest_index] hide_rubble();
+                    level.chests[level.chest_index].hidden = false;
+                }
+                else
+                {
+                    level.chests[i] hide_chest();
+                }
+        }
+        else if(level.script == "zombie_temple")
+        {
+            if(IsSubStr(level.chests[i].script_noteworthy, "bridge_chest" ))
+                {
+                    level.chest_index = i;
+                    level.chests[level.chest_index] hide_rubble();
+                    level.chests[level.chest_index].hidden = false;
+                }
+                else
+                {
+                    level.chests[i] hide_chest();
+                }
+        }
+
+		else if( isdefined( level.random_pandora_box_start ) && level.random_pandora_box_start == true )
 		{
 			if ( start_chest_found || (IsDefined( level.chests[i].start_exclude ) && level.chests[i].start_exclude == 1) )
 			{
@@ -1340,7 +1394,7 @@ treasure_chest_think()
 			
 		// PI_CHANGE_BEGIN
 		// JMA - we only update counters when it's available
-		if( level.chest_moves > 0 && isDefined(level.pulls_since_last_ray_gun) )
+		if( isDefined(level.pulls_since_last_ray_gun) )
 		{
 			level.pulls_since_last_ray_gun += 1;
 		}
@@ -2250,7 +2304,7 @@ treasure_chest_weapon_spawn( chest, player, respin )
 		acquire_weapon_toggle( rand, player );
 
 		//turn off power weapon, since player just got one
-		if( rand == "tesla_gun_zm" || rand == "ray_gun_zm" )
+		if( rand == "tesla_gun_zm" || rand == "ray_gun_zm" || rand == "tesla_gun_dlc_zm")
 		{
 			if( rand == "ray_gun_zm" )
 			{
@@ -2258,7 +2312,7 @@ treasure_chest_weapon_spawn( chest, player, respin )
 				level.pulls_since_last_ray_gun = 0;
 			}
 			
-			if( rand == "tesla_gun_zm" )
+			if( rand == "tesla_gun_zm" || rand == "tesla_gun_dlc_zm")
 			{
 				level.pulls_since_last_tesla_gun = 0;
 				level.player_seen_tesla_gun = true;

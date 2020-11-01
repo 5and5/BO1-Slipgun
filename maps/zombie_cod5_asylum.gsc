@@ -490,7 +490,7 @@ include_weapons()
 	include_weapon( "zombie_cymbal_monkey", true, false, maps\_zombiemode_weapons::default_monkey_weighting_func );
 
 	// Special
-	//include_weapon( "freezegun_zm" );
+	include_weapon( "freezegun_zm", false );
 	include_weapon( "m1911_upgraded_zm", false );
 
 	//bouncing betties
