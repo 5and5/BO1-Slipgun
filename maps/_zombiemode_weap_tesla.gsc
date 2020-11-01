@@ -237,7 +237,7 @@ tesla_damage_init( hit_location, hit_origin, player )
 	{
 		if(IsDefined(zombs[i].attacker) && zombs[i].attacker == player)
 		{
-			if(IsDefined(zombs[i].damageweapon) && (zombs[i].damageweapon == "tesla_gun_zm" || zombs[i].damageweapon == "tesla_gun_upgraded_zm" || zombs[i].damageweapon == "tesla_gun_powerup_zm" || zombs[i].damageweapon == "tesla_gun_powerup_upgraded_zm" || zombs[i].damageweapon == "tesla_gun_powerup_dlc_zm"))
+			if(IsDefined(zombs[i].damageweapon) && (zombs[i].damageweapon == "tesla_gun_zm" || zombs[i].damageweapon == "tesla_gun_upgraded_zm" || zombs[i].damageweapon == "tesla_gun_powerup_zm" || zombs[i].damageweapon == "tesla_gun_powerup_upgraded_zm" || zombs[i].damageweapon == "tesla_gun_dlc_zm"))
 			{
 				if(!is_true(zombs[i].zombie_tesla_hit) && !is_true(zombs[i].humangun_zombie_1st_hit_response))
 				{

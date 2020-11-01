@@ -292,7 +292,8 @@ factory_zone_init()
 
 	// Warehosue top
 	add_adjacent_zone( "warehouse_bottom_zone", "warehouse_top_zone",	"enter_warehouse_second_floor" );
-	add_adjacent_zone( "warehouse_top_zone",	"bridge_zone",			"enter_warehouse_second_floor" );
+	add_adjacent_zone( "bridge_zone",	"warehouse_bottom_zone",			"enter_warehouse_second_floor" );
+	//add_adjacent_zone( "warehouse_top_zone",	"bridge_zone",			"enter_warehouse_second_floor" );
 
 	// TP East
 	add_adjacent_zone( "tp_east_zone",			"wnuen_zone",			"enter_tp_east" );
@@ -485,7 +486,8 @@ bridge_init()
 	warehouse_bridge_clip delete();
 
 	maps\_zombiemode_zone_manager::connect_zones( "wnuen_bridge_zone", "bridge_zone" );
-	maps\_zombiemode_zone_manager::connect_zones( "warehouse_top_zone", "bridge_zone" );
+	maps\_zombiemode_zone_manager::connect_zones( "bridge_zone", "warehouse_top_zone" );
+	//maps\_zombiemode_zone_manager::connect_zones( "warehouse_top_zone", "bridge_zone" );
 }
 
 
@@ -920,7 +922,7 @@ power_electric_switch()
 	playfx(level._effect["switch_sparks"] ,getstruct("power_switch_fx","targetname").origin);
 
 	// Don't want east or west to spawn when in south zone, but vice versa is okay
-	maps\_zombiemode_zone_manager::connect_zones( "outside_east_zone", "outside_south_zone" );
+	maps\_zombiemode_zone_manager::connect_zones( "outside_east_zone", "outside_south_zone");
 	maps\_zombiemode_zone_manager::connect_zones( "outside_west_zone", "outside_south_zone", true );
 }
 

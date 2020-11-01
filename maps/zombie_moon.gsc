@@ -978,7 +978,7 @@ moon_zone_init()
 
 	// airlock east to power
 	add_adjacent_zone( "airlock_east2_zone", "generator_zone", "catacombs_east4" );
-	add_adjacent_zone( "airlock_east2_zone", "cata_right_end_zone", "catacombs_east4" );
+	//add_adjacent_zone( "airlock_east2_zone", "cata_right_end_zone", "catacombs_east4" );
 
 	// airlock west to power
 	add_adjacent_zone( "airlock_west2_zone", "cata_left_middle_zone", "catacombs_west4" );
@@ -987,6 +987,8 @@ moon_zone_init()
 	// single doors (tunnel 11)
 	add_adjacent_zone( "cata_right_start_zone", "cata_right_middle_zone", "tunnel_11_door1" );
 	add_adjacent_zone( "cata_right_middle_zone", "cata_right_end_zone", "tunnel_11_door2" );
+	// one window fix
+	add_adjacent_zone( "cata_right_end_zone", "generator_zone", "catacombs_east4" ); //added
 
 	// airlock power to labs
 	add_adjacent_zone( "airlock_generator_zone", "generator_zone", "generator_exit_east" );
