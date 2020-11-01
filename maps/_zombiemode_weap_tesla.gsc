@@ -43,7 +43,7 @@ init()
 	//slipgun vars
 	set_zombie_var( "slipgun_chain_wait_min", 0.75, 1 );
 	set_zombie_var( "slipgun_chain_wait_max", 1.5, 1 );
-	set_zombie_var( "slipgun_chain_radius", 130 );
+	set_zombie_var( "slipgun_chain_radius", 120 );
 
 	maps\_zombiemode_spawner::register_zombie_death_animscript_callback( ::slipgun_zombie_death_response );
 
