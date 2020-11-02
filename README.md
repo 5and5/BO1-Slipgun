@@ -18,10 +18,11 @@
 ### General 
 * Added Sliquifer DG-2 to every map
 * Added box weight functions to Sliquifer DG-2, Raygun and Monkeys/Gershes on every map
+* Removed all other wonder weapons
 
 ### Weapons
 
-## Sliquifer DG-2
+### Sliquifer DG-2
 * Added chaining mechanic similar to the Sliquifier from Die Rise
 * Replaced sprint anims with Call of the Deads waffe anims
 * Replaced electric effects with purple electric
